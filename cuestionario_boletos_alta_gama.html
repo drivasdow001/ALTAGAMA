@@ -411,12 +411,16 @@
                     return;
                 }
                 generateStep2();
+                currentStep++;
+                updateProgress();
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById('step' + currentStep).classList.add('active');
+            } else {
+                currentStep++;
+                updateProgress();
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById('step' + currentStep).classList.add('active');
             }
-
-            currentStep++;
-            updateProgress();
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + currentStep).classList.add('active');
         }
 
         function prevStep(step) {
@@ -517,5 +521,5 @@
         // Inicializar
         inicializarFormulario();
     </script>
-</body> 
+</body>
 </html>
